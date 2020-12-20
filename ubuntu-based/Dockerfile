@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -qq update
 RUN apt-get install -y nodejs npm
-
+RUN npm config set strict-ssl false
 RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
 VOLUME ["/app"]
