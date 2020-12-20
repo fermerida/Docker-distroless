@@ -10,8 +10,9 @@ RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 VOLUME ["/app"]
 
 ADD . /app
-RUN cd /app && npm install
-EXPOSE 3000
 WORKDIR /app
 
-CMD ["npm", "start"]
+RUN npm install
+EXPOSE 3000
+
+CMD ["node", "index.js"]
